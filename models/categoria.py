@@ -11,7 +11,10 @@ class categoria(osv.osv):
         'name': fields.char('Nombre de categoría'),
         'description': fields.char('Descripción de categoría'),
         'parent_id': fields.many2one('co.categoria', 'Categoría Padre'),
-        'child_ids': fields.one2many('co.categoria', 'parent_id', 'Sub-Categorías'),
+        'child_ids': fields.one2many(
+            'co.categoria', 
+            'parent_id', 
+            'Sub-Categorías'),
     }
 
 categoria()

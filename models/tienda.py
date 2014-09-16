@@ -9,7 +9,7 @@ class tienda(osv.osv):
     
     _columns = {
         'name': fields.char('Nombre de tienda'),
-        'address': fields.text,
+        'address': fields.text('Dirección'),
     }
 
 tienda()

@@ -20,7 +20,10 @@ lineas_stock()
 class tienda(osv.osv):
     _inherit = 'co.tienda'
     _columns = {
-        'linea_ids': fields.one2many('co.lineas.stock', 'tienda_id', 'Stock'),
+        'linea_ids': fields.one2many(
+            'co.lineas.stock', 
+            'tienda_id', 
+            'Stock'),
     }
 
 tienda()
