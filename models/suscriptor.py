@@ -2,6 +2,7 @@
 
 from openerp.osv import osv, fields
 
+#Definicion de la clase suscriptor
 class suscriptor(osv.osv):
     _name = 'co.suscriptor'
     _description = 'CO Suscriptor'
