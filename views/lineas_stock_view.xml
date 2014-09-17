@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        
+<!--
+        Vista form de CO Solicitud: 
+        Se mostrará al momento de crear un registro.
+-->
+        <record id="view_lineas_stock_form" model="ir.ui.view">
+            <field name="name">co.lineas.stock.form</field>
+            <field name="model">co.lineas.stock</field>
+            <field name="arch" type="xml">
+                <form string="Líneas Stock" version="7.0">
+                    <sheet>
+                        <div class="oe_title">
+                            <label for="multimedia_id" string="Multimedia"/>
+                            <field name="multimedia_id"  />
+                            <label for="medio_id" string="Medio"/>
+                            <field name="medio_id"  />
+                            <label for="tienda_id" string="Tienda"/>
+                            <field name="tienda_id"  />
+                        </div>
+                        <notebook>
+                            <page string="Detalles">
+                                <group>
+                                    <field name="quantity"/>
+<!--
+                                    <separator string="Medios disponibles"/>
+-->
+                                </group>
+<!--
+                                <group string="Medios disponibles">
+                                    <field name="medio_ids" nolabel="1"/>
+                                </group>
+-->
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        
+<!--
+        Vista tree de CO Solicitud: 
+        Se mostrará en el árbol, la lista de registros creados.
+-->
+
+        <record id="view_lineas_stock_tree" model="ir.ui.view">
+            <field name="name">co.lineas.stock.tree</field>
+            <field name="model">co.lineas.stock</field>
+            <field name="arch" type="xml">
+                <tree string="Líneas Stock">
+                    <field name="multimedia_id"/>
+                    <field name="medio_id"/>
+                    <field name="tienda_id"/>
+                    <field name="quantity"/>
+                </tree>
+            </field>
+        </record>
+        
+        <record id="action_lineas_stock" model="ir.actions.act_window">
+            <field name="name">Líneas Stock</field>
+            <field name="res_model">co.lineas.stock</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form,tree</field>
+            <field name="view_id" ref="view_lineas_stock_tree" />
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Acá se registra los productos en la línea stock.
+                </p>
+            </field>
+        </record>
+        
+        <menuitem action="action_lineas_stock" id="menu_lineas_stock"
+                sequence="5" parent="submenu_tienda" />
+    </data>
+</openerp>

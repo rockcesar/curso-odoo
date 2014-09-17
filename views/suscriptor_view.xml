@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        
+<!--
+        Vista form de CO Suscriptor: 
+        Se mostrará al momento de crear un registro.
+-->
+        <record id="view_suscriptor" model="ir.ui.view">
+            <field name="name">co.suscriptor.form</field>
+            <field name="model">co.suscriptor</field>
+            <field name="arch" type="xml">
+                <form string="Suscriptor" version="7.0">
+                    <sheet>
+                        <div class="oe_title">
+                            <label for="name" />
+                            <h1>
+                                <field name="name" required="1"/>
+                            </h1>
+                        </div>
+                        <notebook>
+                            <page string="Detalles">
+                                <group>
+                                    <field name="identification"/>
+                                    <field name="address"/>
+                                </group>
+<!--
+                                <group string="Medios disponibles">
+                                    <field name="medio_ids" nolabel="1"/>
+                                </group>
+-->
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        
+<!--
+        Vista tree de CO Suscriptor: 
+        Se mostrará en el árbol, la lista de registros creados.
+-->
+        <record id="view_suscriptor_tree" model="ir.ui.view">
+            <field name="name">co.suscriptor.tree</field>
+            <field name="model">co.suscriptor</field>
+            <field name="arch" type="xml">
+                <tree string="Tienda">
+                    <field name="name"/>
+                    <field name="identification"/>
+                    <field name="address"/>
+                </tree>
+            </field>
+        </record>
+        
+        <record id="action_suscriptor" model="ir.actions.act_window">
+            <field name="name">Suscriptor</field>
+            <field name="res_model">co.suscriptor</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form,tree</field>
+            <field name="view_id" ref="view_suscriptor_tree" />
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Acá se registran los suscriptores de las tiendas.
+                </p>
+            </field>
+        </record>
+        
+        <menuitem action="action_suscriptor" id="menu_suscriptor"
+                sequence="5" parent="submenu_suscripciones"/>
+    </data>
+</openerp>

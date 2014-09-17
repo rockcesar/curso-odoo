@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="seq_suscripcion_type" model="ir.sequence.type">
+            <field name="name">Secuencia suscripcion</field>
+            <field name="code">seq.suscripcion</field>
+        </record>
+        <record id="seq_suscripcion" model="ir.sequence">
+            <field name="name">Secuencia suscripcion</field>
+            <field name="code">seq.suscripcion</field>
+            <field name="padding" eval="4" />
+            <field name="prefix">SUS/%(year)s/</field>
+        </record>
+    </data>
+</openerp>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+<!--
+        Vista form de CO Tipo Medio: 
+        Se mostrará al momento de crear un registro.
+-->
+        <record id="view_tipo_medio_form" model="ir.ui.view">
+            <field name="name">co.tipo.medio.form</field>
+            <field name="model">co.tipo.medio</field>
+            <field name="arch" type="xml">
+                <form string="Tipo Medio" version="7.0">
+                    <sheet>
+                        <div class="oe_title">
+                            <label for="name" />
+                            <h1>
+                                <field name="name" required="1"/>
+                            </h1>
+                        </div>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        
+<!--
+        Vista tree de CO Tipo Medio: 
+        Se mostrará en el árbol, la lista de registros creados.
+-->
+        <record id="view_tipo_medio_tree" model="ir.ui.view">
+            <field name="name">co.tipo.medio.tree</field>
+            <field name="model">co.tipo.medio</field>
+            <field name="arch" type="xml">
+                <tree string="Tipo Medio">
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+        
+        <record id="action_tipo_medio" model="ir.actions.act_window">
+            <field name="name">Tipo Medio</field>
+            <field name="res_model">co.tipo.medio</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form,tree</field>
+            <field name="view_id" ref="view_tipo_medio_tree" />
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Acá se registran los contenidos de tipos de medios en que
+                    estarán disponibles los contenidos multimedia.
+                </p>
+            </field>
+        </record>
+        
+        <menuitem action="action_tipo_medio" id="menu_tipo_medio"
+                sequence="5" parent="submenu_multimedia" />
+    </data>
+</openerp>

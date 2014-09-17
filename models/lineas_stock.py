@@ -6,6 +6,7 @@ from openerp.osv import osv, fields
 class lineas_stock(osv.osv):
     _name = 'co.lineas.stock'
     _descripcion = 'CO Lineas Stocks'
+    _rec_name = 'quantity'
     
     _columns = {
         'multimedia_id': fields.many2one('co.multimedia', 'Multimedia'),

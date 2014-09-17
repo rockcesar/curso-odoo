@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        
+<!--
+        Vista form de CO Categoría: 
+        Se mostrará al momento de crear un registro.
+-->
+        <record id="view_categoria_form" model="ir.ui.view">
+            <field name="name">co.categoria.form</field>
+            <field name="model">co.categoria</field>
+            <field name="arch" type="xml">
+                <form string="Categoría" version="7.0">
+                    <sheet>
+                        <div class="oe_title">
+                            <label for="name" />
+                            <h1>
+                                <field name="name" required="1"/>
+                            </h1>
+                            <label for="child_ids" string="Disponibles"/>
+                            <field name="child_ids" widget="many2many_tags" />
+                        </div>
+                        <notebook>
+                            <page string="Detalles">
+<!--
+                                <group string="Categoría">
+                                    <field name="description" nolabel="1"/>
+                                </group>
+-->
+                                <group string="Subcategorías">
+                                    <field name="child_ids" nolabel="1"/>
+                                </group>
+<!--
+                                <group string="Medios disponibles">
+                                    <field name="medio_ids" nolabel="1"/>
+                                </group>
+-->
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        
+<!--
+        Vista tree de CO Categoría: 
+        Se mostrará en el árbol, la lista de registros creados.
+-->
+        <record id="view_categoria_tree" model="ir.ui.view">
+            <field name="name">co.categoria.tree</field>
+            <field name="model">co.categoria</field>
+            <field name="field_parent">child_ids</field>
+            <field name="arch" type="xml">
+                <tree string="Categorías">
+                    <field name="name"/>
+<!--
+                    <field name="parent_id"/>
+-->
+                </tree>
+            </field>
+        </record>
+        
+        <record id="action_categoria" model="ir.actions.act_window">
+            <field name="name">Categoria</field>
+            <field name="res_model">co.categoria</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form,tree</field>
+            <field name="view_id" ref="view_categoria_tree" />
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Acá se registran los contenidos de categorías en que
+                    estarán disponibles los contenidos multimedia.
+                </p>
+            </field>
+        </record>
+        
+        <menuitem action="action_categoria" id="menu_categoria"
+                sequence="5" parent="submenu_multimedia" />
+    </data>
+</openerp>

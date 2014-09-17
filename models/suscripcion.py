@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from openerp.osv import osv, fields
-
+from datetime import datetime
 #Tupla de los tipos de suscripcion
 TIPOS = [
     ('oro', 'Plan ORO'),
@@ -13,6 +13,7 @@ TIPOS = [
 class suscripcion(osv.osv):
     _name = 'co.suscripcion'
     _descripcion = 'CO Suscripcion'
+    _rec_name = 'code'
     
     _columns = {
         'code': fields.char('Código de la suscripción'),
@@ -22,5 +23,20 @@ class suscripcion(osv.osv):
         'active': fields.boolean('Active'),
         'suscriptor_id': fields.many2one('co.suscriptor', 'Afiliado'),
     }
+    
+    _defaults = {
+        'active': True,
+        'date_start': datetime.now().strftime('%Y-%m-%d'),
+        #~ 'code': lambda self, cr, uid, context: self.pool.get('ir.sequence').get(cr, uid, 'seq.suscripcion'),
+    }
+    
+    def create(sef, cr, uid, values, context=None):
+        if context is None:
+            context={}
+            
+        values.update({
+            'code': self.pool.get('ir.sequence').get(cr, uid, 'seq.suscripcion')})
+            
+        return super(suscripcion, self).write(cr, uid, values, context=context)
 
 suscripcion()

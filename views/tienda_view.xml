@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        
+<!--
+        Vista form de CO Tienda: 
+        Se mostrará al momento de crear un registro.
+-->
+        <record id="view_tienda_form" model="ir.ui.view">
+            <field name="name">co.tienda.form</field>
+            <field name="model">co.tienda</field>
+            <field name="arch" type="xml">
+                <form string="Tienda" version="7.0">
+                    <sheet>
+                        <div class="oe_title">
+                            <label for="name" />
+                            <h1>
+                                <field name="name" required="1"/>
+                            </h1>
+                        </div>
+                        <notebook>
+                            <page string="Detalles">
+                                <group>
+                                    <field name="address"/>
+                                </group>
+                            </page>
+                            <page string="Stock">
+                                <group>
+                                    <field name="linea_ids" nolabel="1" 
+                                    delete="false" create="false" 
+                                    edit="false">
+                                        <tree editable="bottom">
+                                            <field name="multimedia_id" />
+                                            <field name="medio_id" />
+                                            <field name="tienda_id" invisible="1"/>
+                                            <field name="quantity" />
+                                        </tree>
+                                    </field>
+                                </group>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        
+<!--
+        Vista tree de CO Tienda: 
+        Se mostrará en el árbol, la lista de registros creados.
+-->
+        <record id="view_tienda_tree" model="ir.ui.view">
+            <field name="name">co.tienda.tree</field>
+            <field name="model">co.tienda</field>
+            <field name="arch" type="xml">
+                <tree string="Tienda">
+                    <field name="name"/>
+                    <field name="address"/>
+                </tree>
+            </field>
+        </record>
+        
+        <record id="action_tienda" model="ir.actions.act_window">
+            <field name="name">Tienda</field>
+            <field name="res_model">co.tienda</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form,tree</field>
+            <field name="view_id" ref="view_tienda_tree" />
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Acá se registran las tiendas.
+                </p>
+            </field>
+        </record>
+        
+        <menuitem action="action_tienda" id="menu_tienda"
+                sequence="5" parent="submenu_tienda"/>
+    </data>
+</openerp>
