@@ -12,9 +12,9 @@
                 <form string="Suscripcion" version="7.0">
                     <sheet>
                         <div class="oe_title">
-                            <label for="code" />
+                            <label for="code" string="Código (se genera automáticamente)"/>
                             <h1>
-                                <field name="code" readonly="1"/>
+                                <field name="code" readonly="1" placeholder="El código se genera luego de guardar..."/>
                             </h1>
                             <label for="suscriptor_id" string="Suscriptor"/>
                             <field name="suscriptor_id" />

@@ -15,7 +15,8 @@
                         <div class="oe_title">
                             <label for="multimedia_id" string="Multimedia"/>
                             <field name="multimedia_id"  />
-                            <label for="medio_id" string="Medio"/>
+                            <label for="medio_id" string="Medio" 
+                                    on_change="onchange_medio_id(medio_id)"/>
                             <field name="medio_id"  />
                             <label for="tienda_id" string="Tienda"/>
                             <field name="tienda_id"  />
@@ -49,7 +50,7 @@
             <field name="name">co.lineas.stock.tree</field>
             <field name="model">co.lineas.stock</field>
             <field name="arch" type="xml">
-                <tree string="Líneas Stock">
+                <tree string="Líneas Stock" colors="brown:quantity==0">
                     <field name="multimedia_id"/>
                     <field name="medio_id"/>
                     <field name="tienda_id"/>

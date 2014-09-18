@@ -29,10 +29,12 @@
                                     <field name="linea_ids" nolabel="1" 
                                     delete="false" create="false" 
                                     edit="false">
-                                        <tree editable="bottom">
-                                            <field name="multimedia_id" />
-                                            <field name="medio_id" />
-                                            <field name="tienda_id" invisible="1"/>
+                                        <tree editable="bottom" colors="brown:quantity==0">
+                                            <field name="medio_id" 
+                                                    on_change="onchange_medio_id(medio_id)"/>
+                                            <field name="multimedia_id" 
+                                                    domain="[('medio_ids', '=', medio_id)]"/>
+                                            <field name="tienda_id" invisible="1" />
                                             <field name="quantity" />
                                         </tree>
                                     </field>

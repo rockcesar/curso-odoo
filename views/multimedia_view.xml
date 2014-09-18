@@ -22,9 +22,14 @@
                         <notebook>
                             <page string="Detalles">
                                 <group>
-                                    <field name="release_date"/>
-                                    <field name="code" required="1"/>
-                                    <field name="categoria_id"/>
+                                    <group>
+                                        <field name="stock" string="Disponible"/>
+                                    </group>
+                                    <group>
+                                        <field name="release_date"/>
+                                        <field name="code" required="1"/>
+                                        <field name="categoria_id"/>
+                                    </group>
 <!--
                                     <separator string="Medios disponibles"/>
 -->
@@ -53,6 +58,7 @@
                     <field name="title"/>
                     <field name="release_date"/>
                     <field name="code"/>
+                    <field name="stock" string="Disponibles"/>
                     <field name="categoria_id"/>
                 </tree>
             </field>

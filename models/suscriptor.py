@@ -9,8 +9,13 @@ class suscriptor(osv.osv):
     
     _columns = {
         'name': fields.char('Nombre y Apellido'),
-        'identification': fields.char('Cédula'),
+        'identification': fields.char('Cédula', required=True),
         'address': fields.text('Dirección'),
     }
+    
+    _sql_constraints = [
+        ('identification_uniq', 'unique(identification)', 
+        u'El numero de cédula o pasaporte no se puede repetir.'),
+    ]
     
 suscriptor()
