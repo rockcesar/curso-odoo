@@ -75,6 +75,7 @@
         </record>
         
         <menuitem action="action_tienda" id="menu_tienda"
-                sequence="5" parent="submenu_tienda"/>
+                sequence="5" parent="submenu_tienda"
+                groups="group_admin"/>
     </data>
 </openerp>

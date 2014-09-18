@@ -1,0 +1,17 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_multimedia_suscriptor,acces.multimedia.suscriptor,curso_odoo.model_co_multimedia,group_suscriptor,1,0,0,0
+access_suscripcion_suscriptor,access.suscripcion.suscriptor,curso_odoo.model_co_suscripcion,group_suscriptor,1,0,0,0
+access_solicitud_suscriptor,access.solicitud.suscriptor,curso_odoo.model_co_solicitud,group_suscriptor,1,1,1,1
+access_tipo_medio_suscriptor,acces.tipo.medio.suscriptor,curso_odoo.model_co_tipo_medio,group_suscriptor,1,0,0,0
+access_categoria_suscriptor,access.categoria.suscriptor,curso_odoo.model_co_categoria,group_suscriptor,1,0,0,0
+access_tienda_suscriptor,access.tienda.suscriptor,curso_odoo.model_co_tienda,group_suscriptor,1,0,0,0
+access_stock_suscriptor,access.stock.suscriptor,curso_odoo.model_co_lineas_stock,group_suscriptor,1,0,0,0
+access_suscriptor_suscriptor,access.suscriptor.suscriptor,curso_odoo.model_co_suscriptor,group_suscriptor,1,0,0,0
+access_multimedia_admin,acces.multimedia.admin,curso_odoo.model_co_multimedia,group_admin,1,1,1,1
+access_suscripcion_admin,access.suscripcion.admin,curso_odoo.model_co_suscripcion,group_admin,1,1,1,1
+access_solicitud_admin,access.solicitud.admin,curso_odoo.model_co_solicitud,group_admin,1,1,1,1
+access_tipo_medio_admin,acces.tipo.medio.admin,curso_odoo.model_co_tipo_medio,group_admin,1,1,1,1
+access_categoria_admin,access.categoria.admin,curso_odoo.model_co_categoria,group_admin,1,1,1,1
+access_tienda_admin,access.tienda.admin,curso_odoo.model_co_tienda,group_admin,1,1,1,1
+access_stock_admin,access.stock.admin,curso_odoo.model_co_lineas_stock,group_admin,1,1,1,1
+access_admin_admin,access.suscriptor.admin,curso_odoo.model_co_suscriptor,group_admin,1,1,1,1

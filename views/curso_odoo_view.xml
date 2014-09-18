@@ -7,25 +7,28 @@
         Menu padre
 -->
         <menuitem id="menu_base_curso" name="Inicio" sequence="5" 
-                groups="base.group_user"/>
+                groups="group_admin,group_suscriptor"/>
         
 <!--
         Submenu mutimedia
 -->
         <menuitem id="submenu_multimedia" name="Multimedia"
                 parent="menu_base_curso" sequence="5"
-                groups="base.group_user"/>
+                groups="group_admin,group_suscriptor"/>
 
 <!--
         Menu tienda
 -->                
         <menuitem id="submenu_tienda" name="Tienda"
                 parent="menu_base_curso" sequence="5"
-                groups="base.group_user"/>
-        
+                groups="group_admin"/>
+
+<!--
+        Menu suscripciones
+-->
         <menuitem id="submenu_suscripciones" name="Suscripciones"
                 parent="menu_base_curso" sequence="5"
-                groups="base.group_user"/>
+                groups="group_admin"/>
         
     </data>
 </openerp>

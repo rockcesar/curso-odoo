@@ -81,6 +81,7 @@
         </record>
         
         <menuitem action="action_solicitud" id="menu_solicitud"
-                sequence="5" parent="submenu_suscripciones" />
+                sequence="5" parent="submenu_suscripciones" 
+                groups="group_admin"/>
     </data>
 </openerp>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="group_admin" model="res.groups">
+            <field name="name">Grupo Administrador</field>
+        </record>
+        
+        <record id="group_suscriptor" model="res.groups">
+            <field name="name">Suscriptores</field>
+        </record>
+    </data>
+</openerp>

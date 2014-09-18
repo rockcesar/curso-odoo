@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="menu_multimedia" model="ir.ui.menu">
+            <field name="groups_id" 
+            eval="[(6, 0, [ref('group_admin'), ref('group_suscriptor')])]"/>
+        </record>
+        
+        <record id="menu_suscripcion" model="ir.ui.menu">
+            <field name="groups_id" 
+            eval="[(6, 0, [ref('group_admin'), ref('group_suscriptor')])]"/>
+        </record>
+        
+        <record id="menu_solicitud" model="ir.ui.menu">
+            <field name="groups_id" 
+            eval="[(6, 0, [ref('group_admin'), ref('group_suscriptor')])]"/>
+        </record>
+        
+        <record id="menu_tipo_medio" model="ir.ui.menu">
+            <field name="groups_id" 
+            eval="[(6, 0, [ref('group_admin')])]"/>
+        </record>
+        
+        <record id="menu_categoria" model="ir.ui.menu">
+            <field name="groups_id" 
+            eval="[(6, 0, [ref('group_admin')])]"/>
+        </record>
+        
+        <record id="menu_tienda" model="ir.ui.menu">
+            <field name="groups_id" 
+            eval="[(6, 0, [ref('group_admin')])]"/>
+        </record>
+        
+        <record id="menu_suscriptor" model="ir.ui.menu">
+            <field name="groups_id" 
+            eval="[(6, 0, [ref('group_admin')])]"/>
+        </record>
+    </data>
+</openerp>
