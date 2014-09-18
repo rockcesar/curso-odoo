@@ -30,13 +30,13 @@ class suscripcion(osv.osv):
         #~ 'code': lambda self, cr, uid, context: self.pool.get('ir.sequence').get(cr, uid, 'seq.suscripcion'),
     }
     
-    def create(sef, cr, uid, values, context=None):
+    def create(self, cr, uid, values, context=None):
         if context is None:
             context={}
             
         values.update({
             'code': self.pool.get('ir.sequence').get(cr, uid, 'seq.suscripcion')})
             
-        return super(suscripcion, self).write(cr, uid, values, context=context)
+        return super(suscripcion, self).create(cr, uid, values, context=context)
 
 suscripcion()

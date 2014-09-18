@@ -53,7 +53,7 @@
             <field name="name">co.suscripcion.tree</field>
             <field name="model">co.suscripcion</field>
             <field name="arch" type="xml">
-                <tree string="Suscripcion">
+                <tree string="Suscripcion" colors="brown:type=='bronce';gray:type=='plata';orange:type=='oro'">
                     <field name="code"/>
                     <field name="type"/>
                     <field name="date_start"/>
